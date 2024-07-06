@@ -23,7 +23,10 @@ const exec = promisify(execCallback)
 // Dev: /Users/alex/dev/interval/server/dist/src
 // Release: /Users/alex/.nvm/versions/node/v18.18.1/lib/node_modules/interval-server/dist/src
 
-const projectRootDir = path.resolve(__dirname, '..', '..')
+const projectRootDir =
+  process.env.NODE_ENV === 'production'
+    ? path.resolve(__dirname, '..', '..')
+    : path.resolve(__dirname, '..')
 
 function child(
   cmd: string,

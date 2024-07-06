@@ -7,13 +7,10 @@ import { ServerClient as PostmarkClient } from 'postmark'
 import env from '~/env'
 import { logger } from '~/server/utils/logger'
 
-const TEMPLATES_FOLDER = path.join(
-  __dirname,
-  '..',
-  '..',
-  '..',
-  'email-templates'
-)
+const TEMPLATES_FOLDER =
+  process.env.NODE_ENV === 'production'
+    ? path.join(__dirname, '..', '..', '..', 'email-templates')
+    : path.join(__dirname, '..', '..', 'email-templates')
 
 handlebars.registerPartial(
   'layout',

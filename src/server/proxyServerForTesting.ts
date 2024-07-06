@@ -30,7 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
 
   server.on('upgrade', (req, socket, head) => {
     proxy.ws(req, socket, head, {
-      target: 'ws://localhost:3002',
+      target: 'ws://localhost:3001',
     })
   })
 

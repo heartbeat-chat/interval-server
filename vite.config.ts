@@ -34,7 +34,7 @@ export default defineConfig(async ({ command }) => {
           configure: configureProxy,
         },
         '^/websocket': {
-          target: 'ws://localhost:3002',
+          target: 'ws://localhost:3001',
           changeOrigin: true,
           configure: configureProxy,
         },

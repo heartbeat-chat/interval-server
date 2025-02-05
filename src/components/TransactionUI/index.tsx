@@ -210,7 +210,7 @@ export default function TransactionUI({
             className={shouldUseAppendUi ? 'mt-8' : 'mt-4'}
             transaction={{ ...transaction, ...completedTransactionData }}
             mode={mode}
-            shouldAutoscroll={shouldUseAppendUi && didPreviousCallAcceptInput}
+            shouldAutoscroll={false}
           />
         )}
       </div>
